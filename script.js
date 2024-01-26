@@ -6,7 +6,7 @@ function updateGreeting() {
 
 
     if (hour < 5) {
-        greeting = "Good Evening! (but it's technically morning)";
+        greeting = ". . . Z Z Z . . .";
     }
     else if (hour < 12) {
         greeting = "Good Morning!";
