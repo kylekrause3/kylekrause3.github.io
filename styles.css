@@ -23,7 +23,7 @@ body {
 /* Container for centering content */
 .container {
     width: 90%;
-    max-width: 800px; /* Adjust as needed */
+    max-width: 800px; 
 }
 
 /* Social Links Styling */
@@ -33,7 +33,7 @@ body {
 }
 
 .social-links li {
-  margin-bottom: 10px; /* Adjust the spacing between items */
+  margin-bottom: 10px;
 }
 
 .social-links a {
@@ -47,6 +47,7 @@ body {
   color: #5a5ad7;
 }
 
+/* Contact Info Styling */
 .contact-info {
   list-style: none;
   margin-top: 30px;
@@ -54,7 +55,7 @@ body {
 }
 
 .contact-info li {
-  margin-bottom: 5px; /* Adjust the spacing between items */
+  margin-bottom: 5px; 
 }
 
 .contact-info a{
