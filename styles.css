@@ -1,7 +1,5 @@
-/* Add Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 
-/* Basic Reset */
 body, html {
     margin: 0;
     padding: 0;
@@ -10,7 +8,6 @@ body, html {
     font-family: 'Ubuntu', sans-serif;
 }
 
-/* Dark Theme Styling */
 body {
     background-color: #121222;
     color: #ede8c6;
@@ -20,13 +17,11 @@ body {
     text-align: center;
 }
 
-/* Container for centering content */
 .container {
     width: 90%;
     max-width: 800px; 
 }
 
-/* Social Links Styling */
 .social-links {
   list-style: none;
   padding: 0;
@@ -47,7 +42,6 @@ body {
   color: #5a5ad7;
 }
 
-/* Contact Info Styling */
 .contact-info {
   list-style: none;
   margin-top: 30px;
@@ -65,7 +59,6 @@ body {
   transition: color 0.3s ease;
 }
 
-/* Additional Styling */
 #title {
     font-size: 2.4rem;
     margin-bottom: 20px;
