@@ -17,6 +17,11 @@ body {
     text-align: center;
 }
 
+ul {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 .container {
     width: 90%;
     max-width: 800px; 
