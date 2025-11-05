@@ -68,3 +68,10 @@ body {
     font-size: 1.5rem;
     margin-bottom: 25px;
 }
+
+.link-desc {
+    color: #888;
+    font-size: 0.9rem;
+    margin: 4px 0 12px;
+}
+
