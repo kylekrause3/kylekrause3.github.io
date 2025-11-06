@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+:root {
+  --titlecolor: #ffd500;
+  --background-start: #09196Cff;
+  --background-mid: #0E1957ff;
+  --background-end: rgb(34, 148, 248);
+  --hovercolor: var(--titlecolor);
+  --text1: #e0e0e0;
+  --text2: #bababa;
+  --text3: #898989;
+}
+
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, var(--background-start), var(--background-mid) 45%, var(--background-mid) 55%, var(--background-start) 70%, var(--background-end) 175%) ;
+    color: #ede8c6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+ul {
+    margin-top: 55px;
+    margin-bottom: 55px;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px; 
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+}
+
+.social-links li {
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: var(--text1);
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--hovercolor);
+}
+
+.contact-info {
+  list-style: none;
+  margin-top: 30px;
+  padding:0;
+}
+
+.contact-info li {
+  margin-bottom: 5px; 
+}
+
+.contact-info a{
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+#title {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    color: var(--titlecolor);
+    /* text-shadow: 
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000,
+        -3px -3px 0 #ff360d,
+        3px -3px 0 #ff360d,
+        -3px 3px 0 #ff360d,
+        3px 3px 0 #ff360d,
+        -3px 0 0 #ff360d,
+        3px 0 0 #ff360d,
+        0 -3px 0 #ff360d,
+        0 3px 0 #ff360d; */
+}
+
+#greeting {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: var(--text1);
+}
+
+.link-desc {
+    color: var(--text3);
+    font-size: 0.9rem;
+    margin: 4px 0 10px;
+    display: inline-block;
+}
+
