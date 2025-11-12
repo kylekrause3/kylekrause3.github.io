@@ -28,6 +28,7 @@ body {
 .container {
   width: min(90%, 800px);
   margin-inline: auto;
+  padding-top: 60px;
 }
 
 #title {
