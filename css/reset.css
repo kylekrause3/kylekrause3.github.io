@@ -35,6 +35,11 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+
+    /* Fallback background so areas behind mobile browser chrome
+       (iOS Safari dynamic toolbars) match the site rather than
+       showing the default black/white root color. */
+    background-color: rgb(35, 35, 110);
 }
 
 @media (prefers-reduced-motion: reduce) {
