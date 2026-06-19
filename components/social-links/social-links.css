@@ -1,0 +1,234 @@
+/**
+ * Social Links Component
+ * Wii-style skeuomorphic link buttons with brand color accents
+ * 
+ * Features:
+ * - Full-width buttons that fill container
+ * - Subtle brand color tints on hover
+ * - Responsive 3-column grid on mobile
+ */
+
+/* ============================================
+   Social Links Container
+   ============================================ */
+.social-links {
+    display: flex;
+    gap: 0.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.social-links__item {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+/* ============================================
+   Social Link Button Base
+   ============================================ */
+.social-links__button {
+    /* Brand color variables - defaults (neutral) */
+    --btn-hue: 220;
+    --btn-sat: 20%;
+    --btn-glow: rgba(100, 140, 200, 0.15);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    
+    /* Wii button styling */
+    background: linear-gradient(
+        175deg,
+        hsl(220, 20%, 32%) 0%,
+        hsl(220, 20%, 25%) 40%,
+        hsl(220, 20%, 18%) 100%
+    );
+    
+    border-radius: 0.75rem;
+    border: 2px solid hsl(220, 20%, 12%);
+    
+    /* Beveled button effect */
+    box-shadow:
+        0 0 15px rgba(100, 140, 200, 0.1),
+        0 4px 12px rgba(0, 0, 0, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 hsla(220, 40%, 70%, 0.35),
+        inset 0 -2px 0 rgba(0, 10, 30, 0.5),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+    
+    /* Text styling */
+    color: #e0ecff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-shadow: 
+        0 -1px 0 rgba(0, 0, 0, 0.4),
+        0 1px 0 rgba(100, 150, 220, 0.2);
+    white-space: nowrap;
+    
+    /* Interaction */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: 1px solid hsla(220, 30%, 60%, 0.2);
+    outline-offset: -3px;
+}
+
+/* ============================================
+   Hover State - Uses brand colors
+   ============================================ */
+.social-links__button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(
+        175deg,
+        hsl(var(--btn-hue), calc(var(--btn-sat) + 8%), 38%) 0%,
+        hsl(var(--btn-hue), calc(var(--btn-sat) + 5%), 30%) 40%,
+        hsl(var(--btn-hue), var(--btn-sat), 22%) 100%
+    );
+    border-color: hsl(var(--btn-hue), var(--btn-sat), 15%);
+    box-shadow:
+        0 0 25px var(--btn-glow),
+        0 8px 20px rgba(0, 0, 0, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 hsla(var(--btn-hue), 50%, 75%, 0.45),
+        inset 0 -2px 0 rgba(0, 10, 30, 0.5),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+}
+
+.social-links__button:active {
+    transform: translateY(1px);
+    box-shadow:
+        0 0 10px var(--btn-glow),
+        0 2px 6px rgba(0, 0, 0, 0.4),
+        inset 0 2px 4px rgba(0, 0, 0, 0.3),
+        inset 0 -1px 0 hsla(var(--btn-hue), 30%, 60%, 0.15);
+}
+
+.social-links__button:focus-visible {
+    outline: 2px solid var(--color-primary, #64c8ff);
+    outline-offset: 2px;
+}
+
+/* ============================================
+   Brand Color Variants (hover only)
+   ============================================ */
+
+/* GitHub - Neutral gray with slight warmth */
+.social-links__button--github:hover {
+    --btn-hue: 250;
+    --btn-sat: 8%;
+    --btn-glow: rgba(140, 130, 160, 0.15);
+}
+
+/* Itch.io - Warm rose/coral */
+.social-links__button--itch:hover {
+    --btn-hue: 350;
+    --btn-sat: 25%;
+    --btn-glow: rgba(200, 100, 120, 0.18);
+}
+
+/* Sketchfab - Teal/cyan */
+.social-links__button--sketchfab:hover {
+    --btn-hue: 190;
+    --btn-sat: 28%;
+    --btn-glow: rgba(80, 180, 200, 0.18);
+}
+
+/* YouTube - Deep red */
+.social-links__button--youtube:hover {
+    --btn-hue: 0;
+    --btn-sat: 30%;
+    --btn-glow: rgba(200, 80, 80, 0.18);
+}
+
+/* Bluesky - Sky blue */
+.social-links__button--bluesky:hover {
+    --btn-hue: 210;
+    --btn-sat: 35%;
+    --btn-glow: rgba(80, 150, 220, 0.2);
+}
+
+/* LinkedIn - Professional blue */
+.social-links__button--linkedin:hover {
+    --btn-hue: 205;
+    --btn-sat: 40%;
+    --btn-glow: rgba(50, 130, 200, 0.2);
+}
+
+/* ============================================
+   Responsive - Mobile (3 columns, taller)
+   ============================================ */
+@media (max-width: 765px) {
+    .social-links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .social-links__button {
+        padding: 0.9rem 0.25rem;
+        font-size: 0.9rem;
+        border-radius: 0.6rem;
+    }
+}
+
+/* Very small screens - 2 columns */
+@media (max-width: 360px) {
+    .social-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .social-links__button {
+        padding: 1rem 0.5rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* ============================================
+   Footer Styles
+   ============================================ */
+.site-footer {
+    margin-top: auto;
+    padding: var(--spacing-lg, 2rem) 0 var(--spacing-md, 1.5rem);
+    text-align: center;
+}
+
+.site-footer__contact {
+    list-style: none;
+    margin-top: 15px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.site-footer__link {
+    color: rgba(225, 245, 255, 0.9);
+    /* font-size: 0.9rem; */
+    text-decoration: none;
+    transition: color 0.2s ease;
+    letter-spacing: 0.02em;
+    padding: 5px 9px;
+    background-color: rgba(35, 33, 112, 0.7);
+    border-radius: 5px;
+}
+
+.site-footer__link:hover {
+    color: rgba(200, 216, 240, 0.9);
+}
+
+@media (max-width: 480px) {
+    .site-footer {
+        padding: var(--spacing-md, 1.5rem) 0 var(--spacing-sm, 1rem);
+    }
+    
+    .site-footer__link {
+        font-size: 0.9rem;
+    }
+}
+

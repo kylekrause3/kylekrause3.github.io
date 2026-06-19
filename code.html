@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Software engineering by Kyle Krause, real-time 3D graphics engines in C++/OpenGL, gameplay programming, and production web/app work in React, Vue, and React Native.">
+    <meta name="author" content="Kyle Krause">
+    <meta name="theme-color" content="#23236e">
+    <meta name="color-scheme" content="dark">
+
+    <title>Code &amp; Engines | Kyle Krause</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="components/site-nav/site-nav.css">
+    <link rel="stylesheet" href="components/hero/hero.css">
+    <link rel="stylesheet" href="components/card/card.css">
+    <link rel="stylesheet" href="components/gallery/gallery.css">
+    <link rel="stylesheet" href="components/main-panel/main-panel.css">
+    <link rel="stylesheet" href="components/social-links/social-links.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="background-container" aria-hidden="true">
+        <div class="grid-floor"></div>
+        <div class="sky-gradient"></div>
+    </div>
+
+    <div id="site-nav-root">
+        <noscript>
+            <nav class="site-nav" aria-label="Primary">
+                <div class="site-nav__inner">
+                    <a class="site-nav__brand" href="index.html">Kyle Krause</a>
+                    <ul class="site-nav__links">
+                        <li><a class="site-nav__link" href="about.html">About</a></li>
+                        <li><a class="site-nav__link" href="games.html">Games</a></li>
+                        <li><a class="site-nav__link" href="art.html">3D Art</a></li>
+                        <li><a class="site-nav__link" href="audio.html">Audio</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </noscript>
+    </div>
+
+    <main id="main-content" class="content-wrapper">
+        <div class="container">
+
+            <section class="hero">
+                <span class="hero__eyebrow">Code</span>
+                <h1 class="hero__title">Software Engineering &amp; Real-Time 3D</h1>
+                <p class="hero__subtitle">
+                    My background includes low-level graphics engines in C++ and OpenGL, alongside web and
+                    mobile applications I've built professionally, with an emphasis on
+                    clear, quality code that holds up over time.
+                </p>
+                <div class="hero__actions">
+                    <a class="btn btn--primary" href="https://github.com/kylekrause3" target="_blank" rel="noopener noreferrer">View GitHub</a>
+                </div>
+            </section>
+
+            <!-- ============ PROJECTS ============ -->
+            <section class="section" aria-labelledby="projects-heading">
+                <div class="section-header">
+                    <h2 id="projects-heading" class="section-header__title">Projects</h2>
+                </div>
+
+                <div class="card-grid card-grid--3">
+                    <!-- LearnOpenGL -->
+                    <article class="card">
+                        <div class="project-card__media">
+                            <img src="assets/images/learnopengl.png" alt="LearnOpenGL 3D engine render" loading="lazy">
+                            <span class="project-card__badge">Engine</span>
+                        </div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">3D Graphics Engine (LearnOpenGL)</h3>
+                            <p class="project-card__meta">C++ / GLSL &middot; 2022&ndash;2023 &middot; Solo</p>
+                            <p class="project-card__desc">
+                                A real-time 3D rendering and lighting engine written to work at a
+                                low level: shader-based lighting, a linear-algebra renderer, and 3D splines.
+                            </p>
+                            <ul class="tag-list" style="margin-bottom:1rem;">
+                                <li class="tag">C++</li><li class="tag">OpenGL</li><li class="tag">GLSL</li>
+                            </ul>
+                            <div class="project-card__footer">
+                                <a class="btn btn--primary btn--sm" href="https://github.com/kylekrause3/LearnOpenGL" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Third-Person RPG -->
+                    <article class="card">
+                        <div class="project-card__media">
+                            <img src="assets/images/games/osrsclone1.png" alt="Third-person RPG screenshot" loading="lazy">
+                            <span class="project-card__badge">Game</span>
+                        </div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">Third-Person RPG</h3>
+                            <p class="project-card__meta">Unity / C# &middot; 2022&ndash;Present &middot; Solo</p>
+                            <p class="project-card__desc">
+                                A third-person RPG that began as an Old School RuneScape clone, built
+                                around interlocking systems and environmental storytelling.
+                            </p>
+                            <ul class="tag-list" style="margin-bottom:1rem;">
+                                <li class="tag">Unity</li><li class="tag">C#</li>
+                            </ul>
+                            <div class="project-card__footer">
+                                <a class="btn btn--primary btn--sm" href="https://github.com/kylekrause3/Third-Person-RPG" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Man vs Bean -->
+                    <article class="card">
+                        <div class="project-card__media">
+                            <img src="assets/images/games/manvsbeanexplode.png" alt="Man vs Bean gameplay screenshot" loading="lazy">
+                            <span class="project-card__badge">Game</span>
+                        </div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">Man vs Bean</h3>
+                            <p class="project-card__meta">Unity / C# &middot; Solo</p>
+                            <p class="project-card__desc">
+                                A game built around synchronous multiplayer, where players connect and
+                                play together in real time over the network.
+                            </p>
+                            <ul class="tag-list" style="margin-bottom:1rem;">
+                                <li class="tag">Unity</li><li class="tag">C#</li><li class="tag">Multiplayer</li>
+                            </ul>
+                            <div class="project-card__footer">
+                                <a class="btn btn--primary btn--sm" href="https://github.com/kylekrause3/man-vs-bean" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ============ PROFESSIONAL WORK ============ -->
+            <section class="section" aria-labelledby="work-heading">
+                <div class="section-header">
+                    <h2 id="work-heading" class="section-header__title">Professional Work</h2>
+                </div>
+                <div class="card-grid card-grid--2">
+                    <article class="main-panel">
+                        <div class="main-panel__content">
+                            <h3 class="main-panel__box-title">Cross-Platform 3D Engine</h3>
+                            <p class="project-card__meta">Untethered IO &middot; C++ / OpenGL &middot; 2023&ndash;Present</p>
+                            <div class="timeline__desc">
+                                <ul>
+                                    <li>Maintained and iterated on multi-platform 3D engine software alongside industry veterans for over three years.</li>
+                                    <li>Handled cross-platform graphics development, application development, and UX design.</li>
+                                    <li>Focused on clear, readable engine code and thorough documentation.</li>
+                                </ul>
+                            </div>
+                            <ul class="tag-list"><li class="tag">C++</li><li class="tag">OpenGL / GLAD</li><li class="tag">Unreal</li><li class="tag">C#</li></ul>
+                        </div>
+                    </article>
+                    <article class="main-panel">
+                        <div class="main-panel__content">
+                            <h3 class="main-panel__box-title">Production Web &amp; Mobile Apps</h3>
+                            <p class="project-card__meta">Space Warp &amp; Orion &middot; 2025, multiple projects</p>
+                            <div class="timeline__desc">
+                                <ul>
+                                    <li>Built a cross-platform React Native app from concept to MVP on a small team.</li>
+                                    <li>Delivered features for a high-density geospatial and LLM web interface, deployed to 10+ business clients on a biweekly cadence.</li>
+                                    <li>Led UI/UX and graphic design, iterating directly with clients.</li>
+                                </ul>
+                            </div>
+                            <ul class="tag-list"><li class="tag">React Native</li><li class="tag">Vue.js</li><li class="tag">Python</li><li class="tag">PostgreSQL</li></ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ============ SKILLS ============ -->
+            <section class="section" aria-labelledby="code-skills-heading">
+                <div class="section-header">
+                    <h2 id="code-skills-heading" class="section-header__title">Technical Skills</h2>
+                </div>
+                <article class="main-panel">
+                    <div class="main-panel__content">
+                        <div class="skill-group">
+                            <h4 class="skill-group__title">Languages</h4>
+                            <ul class="tag-list"><li class="tag">C++</li><li class="tag">C#</li><li class="tag">C</li><li class="tag">Python</li><li class="tag">TypeScript</li><li class="tag">Java</li></ul>
+                        </div>
+                        <div class="skill-group">
+                            <h4 class="skill-group__title">Graphics &amp; Engines</h4>
+                            <ul class="tag-list"><li class="tag">OpenGL / GLSL</li><li class="tag">Unity</li><li class="tag">Unreal</li><li class="tag">Godot</li></ul>
+                        </div>
+                        <div class="skill-group">
+                            <h4 class="skill-group__title">Web, Data &amp; Tooling</h4>
+                            <ul class="tag-list"><li class="tag">React</li><li class="tag">Vue.js</li><li class="tag">React Native</li><li class="tag">MySQL</li><li class="tag">PostgreSQL</li><li class="tag">Docker</li><li class="tag">Git / GitHub</li><li class="tag">Jira</li></ul>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="section">
+                <div class="card-grid card-grid--3">
+                    <article class="main-panel">
+                        <div class="main-panel__content">
+                            <h3 class="main-panel__box-title">Graphics &amp; Engines</h3>
+                            <p>Real-time rendering, lighting, shaders, and 3D math at a low level.</p>
+                        </div>
+                    </article>
+                    <article class="main-panel">
+                        <div class="main-panel__content">
+                            <h3 class="main-panel__box-title">Gameplay &amp; Tools</h3>
+                            <p>Gameplay systems and tools in Unity (C#), Unreal, and Godot.</p>
+                        </div>
+                    </article>
+                    <article class="main-panel">
+                        <div class="main-panel__content">
+                            <h3 class="main-panel__box-title">Shipping in Teams</h3>
+                            <p>Testing, code review, peer programming, and consistent delivery to production clients.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+        <footer class="site-footer">
+            <div class="container">
+                <ul class="site-footer__contact">
+                    <li><a href="mailto:kkrausebusiness@gmail.com" class="site-footer__link">kkrausebusiness@gmail.com</a></li>
+                </ul>
+            </div>
+        </footer>
+    </main>
+
+    <script src="components/site-nav/site-nav.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="components/main-panel/main-panel.js" defer></script>
+</body>
+</html>

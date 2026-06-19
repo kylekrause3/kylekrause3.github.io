@@ -3,51 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kyle Krause - Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- SEO & Social -->
+    <meta name="description" content="Kyle Krause: Game Developer & Designer. Real-time 3D, game design, 3D art &amp; textures, game audio, and software/engine engineering.">
+    <meta name="author" content="Kyle Krause">
+    <meta name="keywords" content="game developer, game designer, 3D artist, technical artist, game audio, software engineer, Unity, Unreal, Blender, portfolio">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kyle Krause - Game Developer & Designer">
+    <meta property="og:description" content="Real-time 3D, game design, 3D art, game audio, and engine/tools engineering.">
+    <!-- <meta property="og:image" content="assets/images/og-image.png"> -->
+
+    <!-- Theme & Mobile -->
+    <meta name="theme-color" content="#23236e">
+    <meta name="color-scheme" content="dark">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <title>Kyle Krause, Game Developer and Designer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Components -->
+    <link rel="stylesheet" href="components/site-nav/site-nav.css">
+    <link rel="stylesheet" href="components/hero/hero.css">
+    <link rel="stylesheet" href="components/card/card.css">
+    <link rel="stylesheet" href="components/gallery/gallery.css">
+    <link rel="stylesheet" href="components/main-panel/main-panel.css">
+    <link rel="stylesheet" href="components/social-links/social-links.css">
+
+    <!-- Favicon (add your favicon files) -->
+    <!-- <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml"> -->
 </head>
 <body>
-    <div class="container">
-        <h2 id="title">Kyle Krause</h2>
-        <div id="greeting"></div>
-        <ul class="social-links">
-            <li>
-                <a href="https://github.com/kylekrause3" target="_blank">GitHub<br>
-                <p class="link-desc">Code repositories and projects</p>
-                </a>
-            </li>
-            <li>
-                <a href="https://kylekrause3.itch.io/" target="_blank">Itch.io<br>
-                <p class="link-desc">Playable games and experiments</p>
-                </a>
-            </li>
-            <li>
-                <a href="https://sketchfab.com/kyle.kr" target="_blank">Sketchfab<br>
-                <p class="link-desc">3D models and visual art</p>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.youtube.com/@kylekrausepublic" target="_blank">YouTube<br>
-                <p class="link-desc">3D modeling process videos and development showcases</p>
-                </a>
-            </li>
-            <li>
-                <a href="https://bsky.app/profile/kylekr.bsky.social" target="_blank">kylekr.bsky.social<br>
-                <p class="link-desc">Personal posts and updates</p>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/kyle-k-688806226/" target="_blank">LinkedIn<br>
-                <p class="link-desc">Professional experience</p>
-                </a>
-            </li>
-        </ul>
-        <ul class="contact-info">
-            <li><a class="email-link" href="mailto:kkrausebusiness@gmail.com">kkrausebusiness@gmail.com</a></li>
-        </ul>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- 3D Grid Floor Background -->
+    <div class="background-container" aria-hidden="true">
+        <div class="grid-floor"></div>
+        <div class="sky-gradient"></div>
     </div>
-    <script src="script.js"></script>
-    <!-- TODO: michigan SVG -->
+
+    <!-- Shared navigation (injected by site-nav.js) -->
+    <div id="site-nav-root">
+        <noscript>
+            <nav class="site-nav" aria-label="Primary">
+                <div class="site-nav__inner">
+                    <a class="site-nav__brand" href="index.html">Kyle Krause</a>
+                    <ul class="site-nav__links">
+                        <li><a class="site-nav__link" href="about.html">About</a></li>
+                        <li><a class="site-nav__link" href="games.html">Games</a></li>
+                        <li><a class="site-nav__link" href="art.html">3D Art</a></li>
+                        <li><a class="site-nav__link" href="audio.html">Audio</a></li>
+                        <li><a class="site-nav__link" href="code.html">Code</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </noscript>
+    </div>
+
+    <main id="main-content" class="content-wrapper">
+        <div class="container">
+
+            <!-- ============ HERO ============ -->
+            <section class="hero">
+                <!-- <span class="hero__eyebrow">Game Developer &amp; Designer</span> -->
+                <!-- <h1 class="hero__title">Hello! I'm <span class="hero__accent">Kyle Krause</span></h1> -->
+                <h1 class="hero__title">Hello! I'm Kyle Krause</h1>
+                <p class="hero__subtitle">
+                    I work across the entire game development ecosystem: 3D art and animation,
+                    music and sound, gameplay and level design, and the engine and
+                    tools code beneath them.
+                </p>
+                <div class="hero__roles">
+                    <span class="hero__role">Game Design</span>
+                    <span class="hero__role">3D Art</span>
+                    <span class="hero__role">Technical Art</span>
+                    <span class="hero__role">Audio</span>
+                    <span class="hero__role">Software Engineering</span>
+                </div>
+                <div class="hero__actions">
+                    <a class="btn btn--primary" href="games.html">View Games</a>
+                    <a class="btn btn--ghost" href="about.html#resume">Resume &amp; Skills</a>
+                    <a class="btn btn--ghost" href="mailto:kkrausebusiness@gmail.com">Email</a>
+                </div>
+            </section>
+
+            <!-- ============ WHAT I DO ============ -->
+            <section class="section" aria-labelledby="disciplines-heading">
+                <div class="section-header">
+                    <h2 id="disciplines-heading" class="section-header__title">What I Do</h2>
+                </div>
+
+                <div class="card-grid card-grid--2">
+                    <a class="card card--link discipline-card" href="games.html">
+                        <span class="discipline-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#cfe6ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="7" width="20" height="10" rx="5"/>
+                                <line x1="6.5" y1="11" x2="6.5" y2="13"/><line x1="5.5" y1="12" x2="7.5" y2="12"/>
+                                <circle cx="16" cy="11.5" r="0.8" fill="#cfe6ff" stroke="none"/>
+                                <circle cx="18.2" cy="13" r="0.8" fill="#cfe6ff" stroke="none"/>
+                            </svg>
+                        </span>
+                        <h3 class="discipline-card__title">Game Design &amp; Production</h3>
+                        <p class="discipline-card__desc">
+                            Indie titles with a focus on mechanics that feel
+                            responsive and engaging, that combine my variety of skills.
+                        </p>
+                        <span class="discipline-card__link">View games</span>
+                    </a>
+
+                    <a class="card card--link discipline-card" href="art.html">
+                        <span class="discipline-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#cfe6ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2.6 20.4 7 20.4 17 12 21.4 3.6 17 3.6 7Z"/>
+                                <path d="M3.6 7 12 11.5 20.4 7"/>
+                                <line x1="12" y1="11.5" x2="12" y2="21.4"/>
+                            </svg>
+                        </span>
+                        <h3 class="discipline-card__title">3D Art &amp; Textures</h3>
+                        <p class="discipline-card__desc">
+                            Character, prop, and environment modeling and texturing in
+                            Blender, built to match an art direction and asset budget.
+                        </p>
+                        <span class="discipline-card__link">View 3D art</span>
+                    </a>
+
+                    <a class="card card--link discipline-card" href="audio.html">
+                        <span class="discipline-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#cfe6ff" stroke-width="1.8" stroke-linecap="round">
+                                <line x1="5" y1="10" x2="5" y2="14"/>
+                                <line x1="9" y1="7" x2="9" y2="17"/>
+                                <line x1="13" y1="4.5" x2="13" y2="19.5"/>
+                                <line x1="17" y1="8" x2="17" y2="16"/>
+                                <line x1="21" y1="11" x2="21" y2="13"/>
+                            </svg>
+                        </span>
+                        <h3 class="discipline-card__title">Music &amp; Sound Design</h3>
+                        <p class="discipline-card__desc">
+                            Original music and sound effects for my games, composed and
+                            produced in Reaper and Audacity.
+                        </p>
+                        <span class="discipline-card__link">Listen</span>
+                    </a>
+
+                    <a class="card card--link discipline-card" href="code.html">
+                        <span class="discipline-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#cfe6ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="8 7 3 12 8 17"/>
+                                <polyline points="16 7 21 12 16 17"/>
+                            </svg>
+                        </span>
+                        <h3 class="discipline-card__title">Software &amp; Engines</h3>
+                        <p class="discipline-card__desc">
+                            Real-time graphics engine in C++ and OpenGL, gameplay code in C#,
+                            and production web and app work in React, Vue, and React Native.
+                        </p>
+                        <span class="discipline-card__link">View code</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ============ FEATURED WORK ============ -->
+            <section class="section" aria-labelledby="featured-heading">
+                <div class="section-header">
+                    <h2 id="featured-heading" class="section-header__title">Featured Work</h2>
+                    <p class="section-header__subtitle">
+                        Selected projects across art, audio, design, and software engineering.
+                    </p>
+                </div>
+
+                <div class="card-grid card-grid--3">
+                    <!-- Computer Quest -->
+                    <article class="card">
+                        <div class="project-card__media">
+                            <img src="assets/images/games/computerquestmain.png" alt="Computer Quest gameplay screenshot" loading="lazy">
+                        </div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">Computer Quest!</h3>
+                            <p class="project-card__meta">Platformer &middot; Fall 2025</p>
+                            <p class="project-card__desc">
+                                A web-playable platformer where I created all of the art, models,
+                                textures, music, and sound effects.
+                            </p>
+                            <div class="project-card__roles">
+                                <span class="project-card__role">Art</span>
+                                <span class="project-card__role">Animation</span>
+                                <span class="project-card__role">Music</span>
+                                <span class="project-card__role">SFX</span>
+                            </div>
+                            <div class="project-card__footer">
+                                <a class="btn btn--primary btn--sm" href="https://kylekrause3.itch.io/computer-quest" target="_blank" rel="noopener noreferrer">Play on itch.io</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- LearnOpenGL -->
+                    <article class="card">
+                        <div class="project-card__media">
+                            <img src="assets/images/learnopengl.png" alt="LearnOpenGL 3D engine render" loading="lazy">
+                        </div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">3D Graphics Engine</h3>
+                            <p class="project-card__meta">C++ / OpenGL &middot; 2022&ndash;2023</p>
+                            <p class="project-card__desc">
+                                A real-time 3D rendering and lighting engine I wrote in C++:
+                                shader lighting, a math-based renderer, and 3D splines.
+                            </p>
+                            <div class="project-card__roles">
+                                <span class="project-card__role">Graphics</span>
+                                <span class="project-card__role">C++</span>
+                                <span class="project-card__role">GLSL</span>
+                            </div>
+                            <div class="project-card__footer">
+                                <a class="btn btn--primary btn--sm" href="https://github.com/kylekrause3/LearnOpenGL" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- OSRS Clone -->
+                    <article class="card">
+                        <div class="project-card__media">
+                            <img src="assets/images/games/osrsclone1.png" alt="Old School RuneScape clone screenshot" loading="lazy">
+                        </div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">Old School RuneScape Clone</h3>
+                            <p class="project-card__meta">Unity / C# &middot; 2022&ndash;2024</p>
+                            <p class="project-card__desc">
+                                A 3D point-and-click adventure, and my first substantial
+                                game programming and design project.
+                            </p>
+                            <div class="project-card__roles">
+                                <span class="project-card__role">Design</span>
+                                <span class="project-card__role">Programming</span>
+                                <span class="project-card__role">Levels</span>
+                            </div>
+                            <div class="project-card__footer">
+                                <a class="btn btn--primary btn--sm" href="https://kylekrause3.itch.io/osrs-clone" target="_blank" rel="noopener noreferrer">View on itch.io</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="text-center mt-lg">
+                    <a class="btn btn--ghost" href="games.html">See game projects</a>
+                </div>
+            </section>
+
+            <!-- ============ CONNECT ============ -->
+            <section class="section" aria-labelledby="connect-heading">
+                <div class="section-header">
+                    <h2 id="connect-heading" class="section-header__title">Find Me Online</h2>
+                </div>
+                <nav aria-label="Social media links">
+                    <ul class="social-links">
+                        <li class="social-links__item">
+                            <a href="https://github.com/kylekrause3" target="_blank" rel="noopener noreferrer" class="social-links__button social-links__button--github">GitHub</a>
+                        </li>
+                        <li class="social-links__item">
+                            <a href="https://kylekrause3.itch.io/" target="_blank" rel="noopener noreferrer" class="social-links__button social-links__button--itch">Itch.io</a>
+                        </li>
+                        <li class="social-links__item">
+                            <a href="https://sketchfab.com/kyle.kr" target="_blank" rel="noopener noreferrer" class="social-links__button social-links__button--sketchfab">Sketchfab</a>
+                        </li>
+                        <li class="social-links__item">
+                            <a href="https://www.youtube.com/@kylekrausepublic" target="_blank" rel="noopener noreferrer" class="social-links__button social-links__button--youtube">YouTube</a>
+                        </li>
+                        <li class="social-links__item">
+                            <a href="https://bsky.app/profile/kylekr.bsky.social" target="_blank" rel="noopener noreferrer" class="social-links__button social-links__button--bluesky">Bluesky</a>
+                        </li>
+                        <li class="social-links__item">
+                            <a href="https://www.linkedin.com/in/kyle-k-688806226/" target="_blank" rel="noopener noreferrer" class="social-links__button social-links__button--linkedin">LinkedIn</a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="container">
+                <ul class="site-footer__contact">
+                    <li><a href="mailto:kkrausebusiness@gmail.com" class="site-footer__link">kkrausebusiness@gmail.com</a></li>
+                </ul>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="components/site-nav/site-nav.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="components/main-panel/main-panel.js" defer></script>
+    <script src="components/gallery/gallery.js" defer></script>
 </body>
 </html>

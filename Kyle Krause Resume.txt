@@ -1,0 +1,87 @@
+﻿Kyle Krause    (248) 309-0129       kkrausebusiness@gmail.com      White Lake, Michigan
+Passionate designer and developer, focused on real-time 3D, UI/UX, video games, and engine and tools design/development, with a multidisciplinary technical and creative software skillset. I am experienced in shipping production code and assets in cross-functional teams. 
+________________
+WORK EXPERIENCE:
+Orion Geospatial AI, Frontend Software Engineer (part time)            March 2025 - August 2025
+* Vue.js, Python, PostgreSQL, Jira
+* Delivered features in high density, interactive geospatial data and LLM AI chat interface.
+* Bi-weekly deployment to 10+ large business clients, integrating feedback throughout.
+* Iteration with coverage testing, peer coding, and reducing overall site bug count.
+* Responsive and functional design with code review. Work with an international team.
+Space Warp Software, Software Engineer, Designer  (contract based)          March 2025 - Present
+* React Native, Figma, Inkscape, MySQL
+* Cross-platform React Native app development (3 person team) from scratch to an MVP.
+* Delivered and led client/user facing UI/UX design, logo/graphic design.
+* Interfaced regularly with clients to tweak design direction and development breakdown.
+* Designed and delivered dozens of frontend features and api endpoints for core functionality, integration with existing frameworks, scalable user management, etc.
+LostForge SoftWorks, 3D Artist (contract based)                                       November 2025 - Present
+* Blender, Aseprite, RPGMaker
+* Led art production for a 4-person indie team. Making game assets (textures and 3D models), styled to intended art direction and existing game content.
+* Created 15+ in-game assets within resource budgets, polygon/resolution requirements.
+Untethered IO, Inc., Software Engineer, Designer (freelance)                      April 2023 - Present
+* Unreal, C++, OpenGL/GLAD, React Native, C#, Jira
+* Cross-platform 3d Graphics Engine Development; App Development & UX Design.
+* Worked with industry veterans in consistent, long-term software development, maintaining and iterating software over periods of 3+ years.
+* Delivered readable, robust engine documentation; easy-to-read multi-platform code.
+________________
+
+
+EDUCATION:
+University of Michigan - Ann Arbor (Junior):                                                    2023 - 2027
+* Working towards B.S. in Computer Science @ College of Literature, Science, and Arts
+* EECS 298 (3D Technical Art and Animation), EDUC 333 (Video Games and Learning), DIGITAL 333 (Video Game Music), MUSIC 460 (Writing About Video Game Music), FTVM 210 (Screenwriting), EECS 481 (Software Engineering)
+* Game Development Club (Wolverinesoft), Michigan Animation Club
+Past Honors: Mathematics Department Key Award, AP Scholar with Distinction
+________________
+
+
+________________
+
+
+NOTABLE PROJECTS:
+Computer Quest! (Video Game)                                                                 Fall 2025
+* Blender, Unity, Audacity, Aseprite, Reaper
+* Created art, models, textures, music, and sound effects to release a small title showcasing modeling and animation skills. Programming and Unity project given by class professor. Playable on the web.
+* Shipping an indie-level game with my own art, animation, and music.
+* Platformer, final project for EECS 298: 3D Technical Art and Animation.
+   * https://kylekrause3.itch.io/computer-quest
+Snowball Fight (Solo Video Game)                                                                     Fall 2025
+* Blender, Unity, Audacity, Aseprite
+* Models, programming, textures, and sound effects design.
+* Game jam-esque development cycle, created in a few evenings.
+* Round based PvE game.
+   * https://www.youtube.com/watch?v=OIZATm-3Y7k
+LearnOpenGL (Solo Graphics Engine):                                                      Fall/Winter 2022-2023
+* OpenGL/GLSL C++
+* 3D graphics rendering and lighting engine intended for use in 3D development.
+* Low level, real time 3D programming. Lighting with shaders and rendering with linear algebra. 3D spline representations.
+* https://github.com/kylekrause3/LearnOpenGL
+Old School RuneScape Clone, (Solo Video Game):                                                August 2022-2024
+* Unity, C#
+* 3D third person point-and-click adventure game, based on Old School RuneScape.
+* Game/level design centered around what feels fun and fits into the world, designing mechanics that build on top of one another, environmental storytelling.
+* First deep look into game programming and design.
+   * https://kylekrause3.itch.io/osrs-clone
+________________
+
+
+SKILLS:
+Blender, Reaper, Audacity, Aseprite
+Unreal, Unity, Godot, OpenGL
+MySQL, PostgreSQL, Docker
+	
+
+Git/GitHub, Figma, Canva, Jira/AtlassianGraphic Design, UI/UX Design, Interaction Design
+C++, C#, C, React, Vue.js, TypeScript, Python, Java
+	________________
+
+
+
+
+References available by request.
+
+
+________________
+
+
+kylekrause3.github.io

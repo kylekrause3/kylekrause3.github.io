@@ -1,0 +1,267 @@
+/**
+ * 3D Grid Floor Background Styles
+ * Vaporwave/Retrowave aesthetic with perspective grid
+ * 
+ * Uses CSS custom properties for easy theming
+ * Optimized for performance with GPU acceleration
+ */
+
+/* ============================================
+   Background Design Tokens
+   ============================================ */
+:root {
+    /* === Primary Background Colors === */
+    --bg-primary: rgb(35, 35, 110);
+    --bg-primary-rgb: 35, 35, 110;
+    
+    /* === Grid Colors === */
+    --grid-line-color: rgba(255, 255, 255, 0.3);
+    --grid-line-width-h: 8px;
+    --grid-line-width-v: 8px;
+    --grid-cell-width: 160px;
+    --grid-cell-height: 215px;
+    
+    /* === Sky/Atmosphere Colors === */
+    --sky-top: rgba(255, 255, 255, 0.7);
+    --sky-mid: rgba(155, 158, 217, 0.3);
+    --sky-fade: transparent;
+    
+    /* === Perspective Settings === */
+    --perspective-desktop: 800px;
+    --perspective-tablet: 600px;
+    --perspective-mobile: 500px;
+    
+    /* === Grid Transform Settings === */
+    --grid-rotate-x: 70deg;
+    --grid-translate-z: -1500px;
+    --grid-scale: 7;
+    --grid-width: 320%;
+    --grid-height: 300%;
+}
+
+/* ============================================
+   Background Container
+   ============================================ */
+.background-container {
+    position: fixed;
+    inset: 0; /* Shorthand for top/right/bottom/left: 0 */
+    overflow: hidden;
+    z-index: -1;
+    background: var(--bg-primary);
+    perspective: var(--perspective-desktop);
+    
+    /* GPU acceleration for smooth rendering */
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* ============================================
+   3D Grid Floor
+   ============================================ */
+.grid-floor {
+    position: absolute;
+    bottom: 0;
+    left: 46%;
+    width: var(--grid-width);
+    height: var(--grid-height);
+    
+    /* Grid pattern using CSS gradients */
+    background-image: 
+        linear-gradient(to right, var(--grid-line-color) var(--grid-line-width-h), transparent var(--grid-line-width-h)),
+        linear-gradient(to top, var(--grid-line-color) var(--grid-line-width-v), transparent var(--grid-line-width-v));
+    background-size: var(--grid-cell-width) var(--grid-cell-height);
+    background-position: center bottom;
+    
+    /* 3D Transform perspective grid effect with animation */
+    transform-style: preserve-3d;
+    transform-origin: bottom center;
+    animation: gridMoveReverse 9s steps(210) infinite;
+    
+    /* GPU acceleration */
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Grid movement animation - seamless loop */
+@keyframes gridMove {
+    from {
+        transform: 
+            translateX(-50%) 
+            rotateX(var(--grid-rotate-x)) 
+            translateZ(var(--grid-translate-z)) 
+            scale(var(--grid-scale));
+    }
+    to {
+        transform: 
+            translateX(calc(-50% + (var(--grid-cell-width) * var(--grid-scale)))) 
+            rotateX(var(--grid-rotate-x)) 
+            translateZ(var(--grid-translate-z)) 
+            scale(var(--grid-scale));
+    }
+}
+
+@keyframes gridMoveReverse {
+    from {
+        transform: 
+            translateX(calc(-50% + (var(--grid-cell-width) * var(--grid-scale)))) 
+            rotateX(var(--grid-rotate-x)) 
+            translateZ(var(--grid-translate-z)) 
+            scale(var(--grid-scale));
+    }
+    to {
+        transform: 
+            translateX(-50%) 
+            rotateX(var(--grid-rotate-x)) 
+            translateZ(var(--grid-translate-z)) 
+            scale(var(--grid-scale));
+    }
+}
+
+/* Fade grid lines as they go into distance (horizon effect) */
+.grid-floor::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    
+    background: linear-gradient(
+        to bottom, 
+        rgba(var(--bg-primary-rgb), 1) 10%,
+        rgba(var(--bg-primary-rgb), 0.6) 30%,
+        transparent 100%
+    );
+    
+    pointer-events: none;
+}
+
+/* ============================================
+   Sky Gradient Overlay
+   ============================================ */
+.sky-gradient {
+    position: absolute;
+    inset: 0;
+    
+    background: linear-gradient(
+        to bottom,
+        var(--sky-top) 0%,
+        var(--sky-mid) 30%,
+        var(--sky-fade) 50%
+    );
+    
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ============================================
+   Responsive Adjustments - Tablet
+   ============================================ */
+@media (max-width: 768px) {
+    :root {
+        /* --perspective-current: var(--perspective-tablet);
+        --grid-rotate-x: 78deg;
+        --grid-translate-z: -80px; 
+        --grid-scale: 1.8;*/
+        --grid-width: 320%;
+        --grid-height: 310%;
+        --grid-cell-width: 100px;
+        --grid-cell-height: 100px;
+        --grid-line-width-h: 5px;
+        --grid-line-width-v: 7px;
+    }
+    
+    /* .background-container {
+        perspective: var(--perspective-tablet);
+    } */
+    
+    /* .grid-floor {
+        width: 320%;
+        height: 75%;
+        background-size: 50px 50px;
+        transform: 
+            translateX(-50%) 
+            rotateX(78deg) 
+            translateZ(-80px) 
+            scale(1.8);
+    } */
+}
+
+/* ============================================
+   Responsive Adjustments - Mobile
+   ============================================ */
+@media (max-width: 480px) {
+    /* .background-container {
+        perspective: var(--perspective-mobile);
+    } */
+    
+    /* .grid-floor {
+        width: 350%;
+        height: 70%;
+        background-size: 40px 40px;
+        transform: 
+            translateX(-50%) 
+            rotateX(80deg) 
+            translateZ(-60px) 
+            scale(1.8);
+    } */
+    /* Shorter sky gradient on mobile for better content visibility */
+    /* .sky-gradient {
+        background: linear-gradient(
+            to bottom,
+            var(--sky-top) 0%,
+            var(--sky-mid) 20%,
+            var(--sky-fade) 45%
+        );
+    } */
+}
+
+/* ============================================
+   Accessibility - Reduced Motion
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    .background-container,
+    .grid-floor,
+    .sky-gradient {
+        /* Remove any potential animations */
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .grid-floor {
+        /* Simpler transform for reduced motion */
+        will-change: auto;
+        /* Reset background position when motion is disabled */
+        background-position: center bottom !important;
+    }
+}
+
+/* ============================================
+   High Contrast Mode Support
+   ============================================ */
+@media (prefers-contrast: high) {
+    :root {
+        --grid-line-color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* ============================================
+   Optional: Grid Glow Effect (Uncomment to enable)
+   ============================================ */
+/*
+.grid-floor::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    
+    background-image: 
+        linear-gradient(to right, rgba(100, 200, 255, 0.6) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(100, 200, 255, 0.6) 1px, transparent 1px);
+    background-size: var(--grid-cell-width) var(--grid-cell-height);
+    background-position: center bottom;
+    
+    filter: blur(0.5px);
+    opacity: 0.7;
+    pointer-events: none;
+}
+*/
