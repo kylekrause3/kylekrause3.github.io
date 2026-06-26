@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="3D art by Kyle Krause, models and textures made in Blender for games and interactive media, with process videos.">
+    <meta name="author" content="Kyle Krause">
+    <meta name="theme-color" content="#23236e">
+    <meta name="color-scheme" content="dark">
+
+    <title>3D Art | Kyle Krause</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="components/site-nav/site-nav.css">
+    <link rel="stylesheet" href="components/hero/hero.css">
+    <link rel="stylesheet" href="components/card/card.css">
+    <link rel="stylesheet" href="components/gallery/gallery.css">
+    <link rel="stylesheet" href="components/main-panel/main-panel.css">
+    <link rel="stylesheet" href="components/social-links/social-links.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="background-container" aria-hidden="true">
+        <div class="grid-floor"></div>
+        <div class="sky-gradient"></div>
+    </div>
+
+    <div id="site-nav-root">
+        <noscript>
+            <nav class="site-nav" aria-label="Primary">
+                <div class="site-nav__inner">
+                    <a class="site-nav__brand" href="index.html">Kyle Krause</a>
+                    <ul class="site-nav__links">
+                        <li><a class="site-nav__link" href="about.html">About</a></li>
+                        <li><a class="site-nav__link" href="games.html">Games</a></li>
+                        <li><a class="site-nav__link" href="audio.html">Audio</a></li>
+                        <li><a class="site-nav__link" href="code.html">Code</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </noscript>
+    </div>
+
+    <main id="main-content" class="content-wrapper">
+        <div class="container">
+
+            <section class="hero">
+                <span class="hero__eyebrow">3D Art</span>
+                <h1 class="hero__title">Blender 3D Models</h1>
+                <p class="hero__subtitle">
+                    A selection of models I've made in Blender, some with textures drawn in Aseprite.
+                </p>
+                <div class="hero__actions">
+                    <a class="btn btn--primary" href="https://sketchfab.com/kyle.kr" target="_blank" rel="noopener noreferrer">All public Sketchfab models</a>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="renders-heading">
+                <!-- <div class="section-header">
+                    <h2 id="renders-heading" class="section-header__title">Featured Renders</h2>
+                    <p class="section-header__subtitle">
+                        Higher-detail models not posted to Sketchfab.
+                    </p>
+                </div> -->
+                <div class="render-grid">
+                    <button class="render-grid__item" type="button" data-lightbox="assets/images/models/Screenshot_2026-05-13_182402.png" aria-label="View render full size">
+                        <img src="assets/images/models/Screenshot_2026-05-13_182402.png" alt="3D model render" loading="lazy">
+                    </button>
+                    <button class="render-grid__item" type="button" data-lightbox="assets/images/models/Screenshot_2026-03-11_190346.png" aria-label="View render full size">
+                        <img src="assets/images/models/Screenshot_2026-03-11_190346.png" alt="3D model render" loading="lazy">
+                    </button>
+                    <button class="render-grid__item" type="button" data-lightbox="assets/images/models/Screenshot_2026-03-11_183711.png" aria-label="View render full size">
+                        <img src="assets/images/models/Screenshot_2026-03-11_183711.png" alt="3D model render" loading="lazy">
+                    </button>
+                    <button class="render-grid__item" type="button" data-lightbox="assets/images/models/Screenshot_2026-01-25_213913.png" aria-label="View render full size">
+                        <img src="assets/images/models/Screenshot_2026-01-25_213913.png" alt="3D model render" loading="lazy">
+                    </button>
+                    <button class="render-grid__item" type="button" data-lightbox="assets/images/models/Screenshot_2025-10-30_203636.png" aria-label="View render full size">
+                        <img src="assets/images/models/Screenshot_2025-10-30_203636.png" alt="3D model render" loading="lazy">
+                    </button>
+                    <button class="render-grid__item" type="button" data-lightbox="assets/images/models/Screenshot_2026-01-25_213856.png" aria-label="View render full size">
+                        <img src="assets/images/models/Screenshot_2026-01-25_213856.png" alt="3D model render" loading="lazy">
+                    </button>
+                    <button class="render-grid__item" type="button" data-lightbox="assets/images/models/Screenshot_2026-01-25_213944.png" aria-label="View render full size">
+                        <img src="assets/images/models/Screenshot_2026-01-25_213944.png" alt="3D model render" loading="lazy">
+                    </button>
+                    <button class="render-grid__item" type="button" data-lightbox="assets/images/models/Screenshot_2026-01-25_213926.png" aria-label="View render full size">
+                        <img src="assets/images/models/Screenshot_2026-01-25_213926.png" alt="3D model render" loading="lazy">
+                    </button>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="models-heading">
+                <!-- <div class="section-header">
+                    <h2 id="models-heading" class="section-header__title">Interactive Models</h2>
+                    <p class="section-header__subtitle">
+                        Embedded from Sketchfab. Drag to rotate.
+                    </p>
+                </div> -->
+                <div class="model-grid">
+
+                    <article class="card">
+                        <div class="model__viewer">
+                            <iframe title="Alleyway" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen src="https://sketchfab.com/models/0b7d28f4433548ea81fd1eb825b93980/embed"></iframe>
+                        </div>
+                        <div class="model__bar">
+                            <h3 class="model__title">Alleyway</h3>
+                            <a class="btn btn--ghost btn--sm" href="https://www.youtube.com/watch?v=x9TgjcSFqhk" target="_blank" rel="noopener noreferrer">Process Video</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="model__viewer">
+                            <iframe title="GCN Controller" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen src="https://sketchfab.com/models/c8138e4a618d405280108efef39804de/embed"></iframe>
+                        </div>
+                        <div class="model__bar">
+                            <h3 class="model__title">GameCube Controller</h3>
+                            <a class="btn btn--ghost btn--sm" href="https://www.youtube.com/watch?v=PcXY2fAXUWI&t=1017s" target="_blank" rel="noopener noreferrer">Process Video</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="model__viewer">
+                            <iframe title="Colosseum" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen src="https://sketchfab.com/models/2c2ae6011f9346b48be948f66e01f624/embed"></iframe>
+                        </div>
+                        <div class="model__bar">
+                            <h3 class="model__title">Colosseum</h3>
+                            <a class="btn btn--ghost btn--sm" href="https://www.youtube.com/watch?v=rz0zg1NFc5Y" target="_blank" rel="noopener noreferrer">Process Video</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="model__viewer">
+                            <iframe title="Monster Truck" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen src="https://sketchfab.com/models/ae47a1066ad442019ff3d641af18f700/embed"></iframe>
+                        </div>
+                        <div class="model__bar">
+                            <h3 class="model__title">Monster Truck</h3>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="model__viewer">
+                            <iframe title="Bliss Painting" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen src="https://sketchfab.com/models/bf1b61a864d14f518d67e91d89f11922/embed"></iframe>
+                        </div>
+                        <div class="model__bar">
+                            <h3 class="model__title">Bliss Painting</h3>
+                            <a class="btn btn--ghost btn--sm" href="https://www.youtube.com/watch?v=gYrP0noBlvY" target="_blank" rel="noopener noreferrer">Process Video</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="model__viewer">
+                            <iframe title="Nigiri" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen src="https://sketchfab.com/models/2f0daa1b77cb46a9aa21d029037b6c3f/embed"></iframe>
+                        </div>
+                        <div class="model__bar">
+                            <h3 class="model__title">Nigiri</h3>
+                            <a class="btn btn--ghost btn--sm" href="https://www.youtube.com/watch?v=BK8EZSB06vU" target="_blank" rel="noopener noreferrer">Process Video</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="model__viewer">
+                            <iframe title="Water Bottle" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen src="https://sketchfab.com/models/5b8a0b615cbf43b2b364639ccdb210fc/embed"></iframe>
+                        </div>
+                        <div class="model__bar">
+                            <h3 class="model__title">Water Bottle</h3>
+                            <a class="btn btn--ghost btn--sm" href="https://www.youtube.com/watch?v=GvftE9hWbOQ" target="_blank" rel="noopener noreferrer">Process Video</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="model__viewer">
+                            <iframe title="Leaf" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen src="https://sketchfab.com/models/d960edfbc7a54b46aa299e8c5a9c94b1/embed"></iframe>
+                        </div>
+                        <div class="model__bar">
+                            <h3 class="model__title">Leaf</h3>
+                            <a class="btn btn--ghost btn--sm" href="https://www.youtube.com/watch?v=ObMVRwg89G4" target="_blank" rel="noopener noreferrer">Process Video</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="model__viewer">
+                            <iframe title="Moo Deng" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen src="https://sketchfab.com/models/dc3b0493ebe6471295b7bdeecb619893/embed"></iframe>
+                        </div>
+                        <div class="model__bar">
+                            <h3 class="model__title">Moo Deng</h3>
+                            <a class="btn btn--ghost btn--sm" href="https://www.youtube.com/watch?v=6DjiQwAb2jM" target="_blank" rel="noopener noreferrer">Process Video</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="model__viewer">
+                            <iframe title="Carrot Man" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen src="https://sketchfab.com/models/5fa505a239e644e38e3dc2de2833443f/embed"></iframe>
+                        </div>
+                        <div class="model__bar">
+                            <h3 class="model__title">Carrot Man</h3>
+                            <a class="btn btn--ghost btn--sm" href="https://www.youtube.com/watch?v=KgoZ464zt18&t=1715s" target="_blank" rel="noopener noreferrer">Process Video</a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="card-grid card-grid--2">
+                    <article class="main-panel">
+                        <div class="main-panel__content">
+                            <h3 class="main-panel__box-title">Tools</h3>
+                            <ul class="tag-list mt-sm">
+                                <li class="tag">Blender</li>
+                                <li class="tag">Aseprite</li>
+                                <li class="tag">Unity</li>
+                                <li class="tag">Unreal</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="main-panel">
+                        <div class="main-panel__content">
+                            <h3 class="main-panel__box-title">How I Work</h3>
+                            <p>
+                                For client work, I match established art direction and stay within
+                                polygon and texture budgets, so assets integrate directly into the
+                                engine and game. Several of these pieces were personal projects made to
+                                practice and explore techniques.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+        <footer class="site-footer">
+            <div class="container">
+                <ul class="site-footer__contact">
+                    <li><a href="mailto:kkrausebusiness@gmail.com" class="site-footer__link">kkrausebusiness@gmail.com</a></li>
+                </ul>
+            </div>
+        </footer>
+    </main>
+
+    <script src="components/site-nav/site-nav.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="components/main-panel/main-panel.js" defer></script>
+    <script src="components/gallery/gallery.js" defer></script>
+</body>
+</html>

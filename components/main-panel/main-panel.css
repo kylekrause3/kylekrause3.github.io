@@ -1,0 +1,523 @@
+/**
+ * Main Panel Component
+ * Original Wii-inspired skeuomorphic content boxes (Dark Theme)
+ * 
+ * Design Language:
+ * - Chunky rounded corners with beveled edges
+ * - Prominent glossy highlights on dark surfaces
+ * - Deep shadows and raised plastic feel
+ * - Retro, tactile, "channel button" aesthetic
+ */
+
+/* ============================================
+   CSS Custom Properties for Panel Theming
+   ============================================ */
+.main-panel {
+    /* Panel Colors - Dark Theme */
+    --panel-bg-start: #483a6a;
+    --panel-bg-mid: #2b2a55;
+    --panel-bg-end: #1b1a40;
+    
+    /* Beveled edge colors */
+    --panel-bevel-light: rgba(120, 150, 200, 0.5);
+    --panel-bevel-dark: rgba(0, 10, 30, 0.7);
+    
+    /* Border and glow */
+    --panel-border-outer: #1a2035;
+    --panel-border-inner: rgba(100, 140, 200, 0.3);
+    --panel-shadow-outer: rgba(0, 0, 0, 0.5);
+    --panel-shadow-glow: rgba(80, 140, 220, 0.15);
+    
+    /* Glossy shine */
+    --panel-shine-start: rgba(180, 200, 240, 0.35);
+    --panel-shine-mid: rgba(140, 170, 220, 0.15);
+    --panel-shine-end: rgba(100, 140, 200, 0);
+    
+    /* Panel Dimensions */
+    --panel-radius: 1.5rem;
+    --panel-radius-inner: 1rem;
+    --panel-padding: 2rem;
+    --panel-shine-height: 50%;
+    --panel-border-width: 3px;
+    
+    /* Panel Text - Light for dark background */
+    --panel-text-color: #c8d8f0;
+    --panel-heading-color: #ffffff;
+    --panel-text-shadow: rgba(0, 0, 0, 0.5);
+    --panel-text-glow: rgba(100, 160, 255, 0.3);
+}
+
+/* ============================================
+   Main Panel Container
+   ============================================ */
+.main-panel {
+    position: relative;
+    width: 100%;
+    padding: var(--panel-padding);
+    
+    /* Chunky Wii-style rounded rectangle */
+    border-radius: var(--panel-radius);
+    
+    /* Rich gradient background - dark blue tones */
+    background: linear-gradient(
+        175deg,
+        var(--panel-bg-start) 0%,
+        var(--panel-bg-mid) 40%,
+        var(--panel-bg-end) 100%
+    );
+    
+    /* Layered shadows for that raised plastic "channel button" feel */
+    box-shadow:
+        /* Outer glow - subtle blue ambient */
+        0 0 25px var(--panel-shadow-glow),
+        /* Deep drop shadow */
+        0 8px 24px var(--panel-shadow-outer),
+        0 4px 8px rgba(0, 0, 0, 0.4),
+        /* TOP BEVEL - bright edge highlight */
+        inset 0 2px 0 var(--panel-bevel-light),
+        inset 0 1px 0 rgba(200, 220, 255, 0.2),
+        /* LEFT BEVEL - subtle side highlight */
+        inset 2px 0 0 rgba(100, 140, 200, 0.2),
+        /* BOTTOM BEVEL - dark edge for depth */
+        inset 0 -3px 0 var(--panel-bevel-dark),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+        /* RIGHT BEVEL - subtle dark edge */
+        inset -2px 0 0 rgba(0, 20, 50, 0.3),
+        /* Inner ambient shadow */
+        inset 0 -8px 20px rgba(0, 10, 30, 0.3);
+    
+    /* Thick outer border - gives that chunky plastic rim */
+    border: var(--panel-border-width) solid var(--panel-border-outer);
+    
+    /* Inner border highlight via outline */
+    outline: 1px solid var(--panel-border-inner);
+    outline-offset: -4px;
+    
+    /* Typography */
+    color: var(--panel-text-color);
+    
+    /* Smooth transitions */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Ensure shine overlay is positioned correctly */
+    overflow: hidden;
+}
+
+/* ============================================
+   Glossy Shine Effect (Top Highlight)
+   ============================================ */
+.main-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--panel-shine-height);
+    
+    /* Prominent Wii gloss - that signature plastic shine */
+    background: linear-gradient(
+        178deg,
+        var(--panel-shine-start) 0%,
+        var(--panel-shine-mid) 25%,
+        var(--panel-shine-end) 60%,
+        transparent 100%
+    );
+    
+    /* Curved shine shape - like light hitting curved plastic */
+    border-radius: var(--panel-radius) var(--panel-radius) 60% 60% / var(--panel-radius) var(--panel-radius) 40% 40%;
+    
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Secondary shine - adds that extra plastic gleam */
+.main-panel::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    
+    /* Sharp highlight line at top edge */
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(180, 210, 255, 0.4) 20%,
+        rgba(200, 225, 255, 0.5) 50%,
+        rgba(180, 210, 255, 0.4) 80%,
+        transparent 100%
+    );
+    
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* ============================================
+   Panel Content Wrapper
+   ============================================ */
+.main-panel__content {
+    position: relative;
+    z-index: 2;
+}
+
+/* ============================================
+   Panel Header Area
+   ============================================ */
+.main-panel__header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.main-panel__title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--panel-heading-color);
+    /* Embossed text effect */
+    text-shadow: 
+        0 -1px 0 rgba(0, 0, 0, 0.5),
+        0 1px 0 rgba(150, 180, 220, 0.3),
+        0 0 20px var(--panel-text-glow);
+    margin: 0;
+    letter-spacing: 0.02em;
+}
+
+.main-panel__subtitle {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: #8aa0c0;
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================
+   Panel Body Content
+   ============================================ */
+.main-panel__body {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.main-panel__body p {
+    color: var(--panel-text-color);
+    margin-bottom: 1rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.main-panel__body p:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   Panel Footer
+   ============================================ */
+.main-panel__footer {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(100, 140, 200, 0.2);
+}
+
+/* ============================================
+   Panel Modifiers / Variants
+   ============================================ */
+
+/* Compact variant - less padding */
+.main-panel--compact {
+    --panel-padding: 1.25rem;
+    --panel-radius: 1.25rem;
+}
+
+/* Large variant - more spacious */
+.main-panel--large {
+    --panel-padding: 2.5rem;
+    --panel-radius: 2rem;
+}
+
+@media (max-width: 765px) {
+    .main-panel--top {
+        margin-top: 50px;
+    }
+}
+
+/* Wii Blue Channel variant */
+.main-panel--blue {
+    --panel-bg-start: #3a5580;
+    --panel-bg-mid: #2a4268;
+    --panel-bg-end: #1a3050;
+    --panel-shadow-glow: rgba(80, 150, 255, 0.2);
+    --panel-bevel-light: rgba(100, 160, 240, 0.5);
+}
+
+/* Wii Green variant (Mii Channel style) */
+.main-panel--green {
+    --panel-bg-start: #3a6050;
+    --panel-bg-mid: #2a5040;
+    --panel-bg-end: #1a3828;
+    --panel-shadow-glow: rgba(80, 200, 130, 0.15);
+    --panel-bevel-light: rgba(100, 200, 150, 0.4);
+}
+
+/* Orange/Warm variant (Shop Channel style) */
+.main-panel--orange {
+    --panel-bg-start: #6a5040;
+    --panel-bg-mid: #5a4035;
+    --panel-bg-end: #3a2820;
+    --panel-shadow-glow: rgba(255, 150, 80, 0.15);
+    --panel-bevel-light: rgba(255, 180, 120, 0.4);
+}
+
+/* Elevated/floating variant - extra chunky */
+.main-panel--elevated {
+    box-shadow:
+        0 0 40px var(--panel-shadow-glow),
+        0 16px 40px var(--panel-shadow-outer),
+        0 6px 12px rgba(0, 0, 0, 0.5),
+        inset 0 3px 0 var(--panel-bevel-light),
+        inset 0 1px 0 rgba(200, 220, 255, 0.25),
+        inset 2px 0 0 rgba(100, 140, 200, 0.25),
+        inset 0 -4px 0 var(--panel-bevel-dark),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.6),
+        inset -2px 0 0 rgba(0, 20, 50, 0.4),
+        inset 0 -10px 25px rgba(0, 10, 30, 0.35);
+}
+
+/* Interactive/clickable variant - Wii channel button feel */
+.main-panel--interactive {
+    cursor: pointer;
+}
+
+.main-panel--interactive:hover {
+    transform: translateY(-3px) scale(1.005);
+    box-shadow:
+        0 0 50px var(--panel-shadow-glow),
+        0 12px 32px var(--panel-shadow-outer),
+        0 6px 12px rgba(0, 0, 0, 0.5),
+        inset 0 2px 0 rgba(150, 180, 230, 0.6),
+        inset 0 1px 0 rgba(200, 220, 255, 0.3),
+        inset 2px 0 0 rgba(100, 140, 200, 0.25),
+        inset 0 -3px 0 var(--panel-bevel-dark),
+        inset -2px 0 0 rgba(0, 20, 50, 0.35),
+        inset 0 -8px 20px rgba(0, 10, 30, 0.3);
+}
+
+.main-panel--interactive:active {
+    transform: translateY(1px) scale(0.995);
+    transition-duration: 0.1s;
+    box-shadow:
+        0 0 30px var(--panel-shadow-glow),
+        0 4px 16px var(--panel-shadow-outer),
+        0 2px 6px rgba(0, 0, 0, 0.5),
+        inset 0 3px 8px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(0, 0, 0, 0.3),
+        inset 0 -1px 0 rgba(100, 150, 220, 0.2);
+}
+
+/* ============================================
+   Nested Content Boxes (Recessed inset style)
+   ============================================ */
+.main-panel__box {
+    /* Recessed/inset dark background */
+    background: linear-gradient(
+        180deg,
+        rgba(10, 20, 40, 0.6) 0%,
+        rgba(20, 35, 60, 0.5) 50%,
+        rgba(30, 45, 75, 0.4) 100%
+    );
+    border-radius: var(--panel-radius-inner);
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    
+    /* Inset/pressed-in effect with beveled edges */
+    box-shadow:
+        /* Top inner shadow - pressed in */
+        inset 0 3px 6px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(0, 0, 0, 0.3),
+        /* Bottom inner highlight - depth illusion */
+        inset 0 -2px 4px rgba(80, 120, 180, 0.1),
+        inset 0 -1px 0 rgba(100, 150, 220, 0.15),
+        /* Subtle outer highlight */
+        0 1px 0 rgba(100, 150, 220, 0.1);
+    
+    /* Dark border with inner glow */
+    border: 2px solid rgba(0, 10, 30, 0.5);
+    
+    position: relative;
+}
+
+.main-panel__box:last-child {
+    margin-bottom: 0;
+}
+
+.main-panel__box-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #e0ecff;
+    margin: 0 0 0.5rem 0;
+    text-shadow: 
+        0 -1px 0 rgba(0, 0, 0, 0.4),
+        0 1px 0 rgba(100, 150, 220, 0.2);
+}
+
+.main-panel__box p {
+    color: #a0b8d8;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* ============================================
+   Icon Decoration (Wii-style circular icons)
+   ============================================ */
+.main-panel__icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(
+        180deg,
+        #4a5a7a 0%,
+        #3a4a65 50%,
+        #2a3a50 100%
+    );
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        inset 0 2px 0 rgba(120, 160, 220, 0.4),
+        inset 0 1px 0 rgba(180, 200, 240, 0.2),
+        inset 0 -2px 4px rgba(0, 10, 30, 0.4),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    border: 2px solid rgba(20, 35, 60, 0.8);
+}
+
+.main-panel__icon img,
+.main-panel__icon svg {
+    width: 28px;
+    height: 28px;
+    opacity: 0.9;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* ============================================
+   Responsive Adjustments
+   ============================================ */
+@media (max-width: 768px) {
+    .main-panel {
+        --panel-padding: 1.5rem;
+        --panel-radius: 1.25rem;
+        --panel-radius-inner: 0.875rem;
+        --panel-border-width: 2px;
+    }
+    
+    .main-panel--large {
+        --panel-padding: 1.75rem;
+        --panel-radius: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-panel {
+        --panel-padding: 1.25rem;
+        --panel-radius: 1rem;
+        --panel-radius-inner: 0.75rem;
+        --panel-border-width: 2px;
+    }
+    
+    .main-panel--large {
+        --panel-padding: 1.5rem;
+        --panel-radius: 1.25rem;
+    }
+    
+    .main-panel__icon {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .main-panel__icon img,
+    .main-panel__icon svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .main-panel__box {
+        padding: 1rem;
+    }
+}
+
+/* ============================================
+   Animation - Wii-style entrance
+   ============================================ */
+@keyframes panelFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes panelGlow {
+    0%, 100% {
+        box-shadow:
+            0 0 25px var(--panel-shadow-glow),
+            0 8px 24px var(--panel-shadow-outer),
+            0 4px 8px rgba(0, 0, 0, 0.4),
+            inset 0 2px 0 var(--panel-bevel-light),
+            inset 0 1px 0 rgba(200, 220, 255, 0.2),
+            inset 2px 0 0 rgba(100, 140, 200, 0.2),
+            inset 0 -3px 0 var(--panel-bevel-dark),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+            inset -2px 0 0 rgba(0, 20, 50, 0.3),
+            inset 0 -8px 20px rgba(0, 10, 30, 0.3);
+    }
+    50% {
+        box-shadow:
+            0 0 35px rgba(100, 180, 255, 0.25),
+            0 8px 24px var(--panel-shadow-outer),
+            0 4px 8px rgba(0, 0, 0, 0.4),
+            inset 0 2px 0 var(--panel-bevel-light),
+            inset 0 1px 0 rgba(200, 220, 255, 0.25),
+            inset 2px 0 0 rgba(100, 140, 200, 0.2),
+            inset 0 -3px 0 var(--panel-bevel-dark),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+            inset -2px 0 0 rgba(0, 20, 50, 0.3),
+            inset 0 -8px 20px rgba(0, 10, 30, 0.3);
+    }
+}
+
+.main-panel--animate {
+    animation: panelFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+}
+
+/* Optional subtle glow pulse */
+.main-panel--glow {
+    animation: panelGlow 4s ease-in-out infinite;
+}
+
+/* Stagger animation delay for multiple panels */
+.main-panel--animate:nth-child(1) { animation-delay: 0s; }
+.main-panel--animate:nth-child(2) { animation-delay: 0.15s; }
+.main-panel--animate:nth-child(3) { animation-delay: 0.3s; }
+.main-panel--animate:nth-child(4) { animation-delay: 0.45s; }
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .main-panel--animate {
+        animation: none;
+        opacity: 1;
+    }
+    
+    .main-panel--glow {
+        animation: none;
+    }
+    
+    .main-panel--interactive:hover {
+        transform: none;
+    }
+}
+
