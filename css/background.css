@@ -33,10 +33,10 @@
     
     /* === Grid Transform Settings === */
     --grid-rotate-x: 70deg;
-    --grid-translate-z: -1500px;
+    --grid-translate-z: -1450px;
     --grid-scale: 7;
-    --grid-width: 320%;
-    --grid-height: 300%;
+    --grid-width: 460%;
+    --grid-height: 320%;
 }
 
 /* ============================================
@@ -85,6 +85,16 @@
     /* GPU acceleration */
     will-change: transform;
     backface-visibility: hidden;
+
+    /* Fade the plane out at the far edge and at the left/right edges */
+    -webkit-mask-image:
+        linear-gradient(to top, #000 0%, #000 28%, transparent 62%),
+        linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+        linear-gradient(to top, #000 0%, #000 28%, transparent 62%),
+        linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+    mask-composite: intersect;
 }
 
 /* Grid movement animation - seamless loop */
