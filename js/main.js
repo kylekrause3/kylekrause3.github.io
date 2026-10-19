@@ -109,7 +109,28 @@
        Initialization
        ============================================ */
     
+    function initPortrait() {
+        const image = document.querySelector('.hero__portrait-image');
+        if (!image) return;
+
+        const portrait = image.parentElement;
+
+        const markLoaded = () => portrait.classList.add('is-loaded');
+        const markMissing = () => portrait.classList.add('is-missing');
+
+        if (image.complete && image.naturalWidth > 0) {
+            markLoaded();
+        } else if (image.complete) {
+            markMissing();
+        } else {
+            image.addEventListener('load', markLoaded);
+            image.addEventListener('error', markMissing);
+        }
+    }
+
     function init() {
+        initPortrait();
+
         // Set initial breakpoint
         handleResponsive();
         

@@ -4,6 +4,55 @@
     padding-block: var(--spacing-lg, 2rem) var(--spacing-md, 1.5rem);
 }
 
+.hero__portrait {
+    position: relative;
+    width: 12rem;
+    height: 12rem;
+    margin: 0.15rem auto 1.25rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(145deg, #c6e4ff 0%, #7f97ff 52%, #c49bff 100%);
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.45),
+        0 0 26px rgba(100, 160, 255, 0.28);
+}
+
+.hero__portrait-image,
+.hero__portrait-fallback {
+    position: absolute;
+    inset: 3px;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    border-radius: 50%;
+}
+
+.hero__portrait-image {
+    object-fit: cover;
+    object-position: center 18%;
+    z-index: 1;
+    opacity: 0;
+}
+
+.hero__portrait.is-loaded .hero__portrait-image {
+    opacity: 1;
+}
+
+.hero__portrait-fallback {
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #d6e6ff;
+    background: linear-gradient(180deg, rgba(45, 44, 85, 0.95), rgba(22, 24, 52, 0.95));
+    box-shadow: inset 0 1px 0 rgba(180, 200, 240, 0.22);
+}
+
+.hero__portrait.is-loaded .hero__portrait-fallback,
+.hero__portrait.is-missing .hero__portrait-image {
+    display: none;
+}
+
 .hero__eyebrow {
     display: inline-block;
     padding: 0.4rem 1rem;
